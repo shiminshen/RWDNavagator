@@ -1,27 +1,39 @@
-
 import React from 'react';
+import classNames from 'classnames';
 
-class Navigator extends React.Component{
-  render() {
+var Navigator = React.createClass({
+
+  getInitialState: function() {
+    return {menuDisplay: false};
+  },
+
+  clickMenuBtn: function() {
+    this.setState({menuDisplay: !this.state.menuDisplay});
+  },
+
+  render: function() {
+
+    var listClass = classNames({
+      'open': this.state.menuDisplay
+    });
+
     return (
       <nav className='navigator'>
-        <a id='menu-toggle' href="">
+        <a id='menu-toggle' href="#" onClick={this.clickMenuBtn}>
           Menu
         </a>
-        <ul id='menu-list'>
+        <ul id='menu-list' className={listClass}>
           <NavButton name='Home'/>
           <NavButton name='About'/>
-          <NavButton name='Contact'/>
-          <NavButton name='Contact'/>
           <NavButton name='Contact'/>
         </ul>
       </nav>
     )
   }
-}
+});
 
-class NavButton extends React.Component{
-  render() {
+var NavButton = React.createClass({
+  render: function() {
     return (
       <li className='nav-btn'>
         <a href="#">
@@ -30,6 +42,6 @@ class NavButton extends React.Component{
       </li>
     )
   }
-}
+});
 
 export default Navigator;

@@ -1,7 +1,0 @@
-{
-  "generator-react-webpack": {
-    "appName": "reactRwdNavigator",
-    "style": "stylus",
-    "postcss": false
-  }
-}
