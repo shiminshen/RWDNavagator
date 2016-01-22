@@ -1,0 +1,37 @@
+
+fontSize = 20px
+
+body
+  font-size: fontSize
+
+.navigator
+  width: 100%
+  background-color: #FAFAFA
+
+#menu-toggle
+  display: none
+  text-decoration: none
+  color: inherit
+
+#menu-list
+  list-style: none
+  text-align: center
+  li
+    padding: 10px
+    display: inline-block
+    a
+      text-decoration: none
+      color: inherit
+
+
+@media screen and (max-width: 500px)
+  #menu-toggle
+    display: block
+    float: right
+  #menu-list
+    display: none
+    &.open
+      display: block
+
+
+
