@@ -1,6 +1,8 @@
+@import 'nib'
 
 fontSize = 20px
 btn-padding = 10px
+menuHeight = 50px
 
 body
   font-size: fontSize
@@ -15,11 +17,50 @@ body
   color: inherit
   background-color: #BBDEFB
   padding: btn-padding
+  width: 50px
+  height: menuHeight
+  position: relative
+  transform: rotate(0deg)
+  transition: 0.5s ease-in-out
+  opacity: 1
+  right: 0
+  &.open
+    span
+      &:nth-child(1)
+        top: 30px
+        transform: rotate(135deg)
+      &:nth-child(2)
+        opacity: 0
+        right: -10px
+      &:nth-child(3)
+        top: 30px
+        transform: rotate(-135deg)
+  span
+    dispaly: block
+    position: absolute
+    height: 7px
+    width: 50px
+    background: #03A9F4
+    border-radius: 100px
+    transform: rotate(0deg)
+    transition: 0.3s ease-in-out
+    &:nth-child(1)
+      top:10px
+    &:nth-child(2)
+      top:30px
+    &:nth-child(3)
+      top:50px
+      
 
 #menu-list
+  margin: 0
+  padding-top: 30px
   list-style: none
   text-align: center
+  cursor: pointer
   li
+    height: menuHeight
+    line-height: menuHeight
     padding: btn-padding
     display: inline-block
     &:hover
@@ -32,11 +73,18 @@ body
 @media screen and (max-width: 500px)
   #menu-toggle
     display: block
-    float: right
+    position: fixed
+    right: 0
+
   #menu-list
+    padding: 0
     display: none
+    background-color: #BBDEFB
     &.open
       display: block
+      li
+        display: block
+
 
 
 

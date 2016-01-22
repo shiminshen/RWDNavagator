@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+require('styles/Navigator.styl');
+
 var Navigator = React.createClass({
 
   getInitialState: function() {
@@ -19,8 +21,10 @@ var Navigator = React.createClass({
 
     return (
       <nav className='navigator'>
-        <a id='menu-toggle' href="#" onClick={this.clickMenuBtn}>
-          Menu
+        <a id='menu-toggle' className={listClass} href="#" onClick={this.clickMenuBtn}>
+          <span></span>
+          <span></span>
+          <span></span>
         </a>
         <ul id='menu-list' className={listClass}>
           <NavButton name='Home'/>
