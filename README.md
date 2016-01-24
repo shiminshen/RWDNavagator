@@ -4,6 +4,6 @@ A responsive web design navigator created by React
 
 Install
 ---
-  npm install
-  npm start
+    npm install
+    npm start
 
